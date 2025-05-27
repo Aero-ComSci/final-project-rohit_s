@@ -1,0 +1,16 @@
+icecreamlist = ["Chocolate", "Vanilla", "Strawberry", "Cookies and Cream", "Chocolate Chip Cookie Dough", "Mango", "Rocky Road"]
+toppingslist = ["Chocolate Chips", "Rainbow Sprinkles", "Fruit", "Caramel Drizzle", "Crushed Nuts"]
+icecream = ""
+
+print("Welcome to Roito's Ice Cream, where you can enjoy a refreshing summer treat! Here are our ice creams:")
+for item in icecreamlist:
+    print(item)
+print("\nNow here are our toppings:")
+for item in toppingslist:
+    print(item)
+while icecream != done: 
+    icecream = input("\nWhich ice cream would you like? Type done to continue onwards.")
+    if icecream in icecreamlist: 
+        icecreamcount = input
+    else: 
+        print("Please select an ice cream from the menu!")
