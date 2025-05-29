@@ -12,3 +12,4 @@ This program gives the user a list of ice creams available in the store and asks
 ```
   def icecream():
 ```
+Link to video: ![image](https://github.com/user-attachments/assets/9864b6bd-7190-44f5-a2a4-24e10d09c084)
