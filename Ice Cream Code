@@ -1,16 +1,42 @@
-icecreamlist = ["Chocolate", "Vanilla", "Strawberry", "Cookies and Cream", "Chocolate Chip Cookie Dough", "Mango", "Rocky Road"]
-toppingslist = ["Chocolate Chips", "Rainbow Sprinkles", "Fruit", "Caramel Drizzle", "Crushed Nuts"]
-icecream = ""
+def icecream():
+    icecreamlist = ["Chocolate", "Vanilla", "Strawberry", "Cookies and Cream", "Chocolate Chip Cookie Dough", "Mango", "Rocky Road"]
+    pricesicecream = [5.00, 5.00, 5.00, 5.50, 5.50, 5.50, 6.00]
+    icecream = ""
+    order = []
+    totalcost = 0.0
+    toppingsorder = []
 
-print("Welcome to Roito's Ice Cream, where you can enjoy a refreshing summer treat! Here are our ice creams:")
-for item in icecreamlist:
-    print(item)
-print("\nNow here are our toppings:")
-for item in toppingslist:
-    print(item)
-while icecream != done: 
-    icecream = input("\nWhich ice cream would you like? Type done to continue onwards.")
-    if icecream in icecreamlist: 
-        icecreamcount = input
-    else: 
-        print("Please select an ice cream from the menu!")
+    print("Welcome to Roito's Ice Cream, where you can enjoy a refreshing summer treat! Here are our ice creams:")
+    for item in icecreamlist:
+        print(item)
+    while icecream != "done": 
+        icecream = input("\nWhich ice cream would you like? Type done to continue onwards.")
+        if icecream in icecreamlist: 
+            icecreamcount = input("How many of these would you like?")
+            if icecreamcount.isdigit():
+                if int(icecreamcount) >= 0:
+                    totalcost += pricesicecream[icecreamlist.index(icecream)] * int(icecreamcount)
+                    order.append((icecream, icecreamcount))
+                else: 
+                    print("Please enter a positive integer for the count.")
+            else: 
+                print("Please enter a positive integer for the count.")
+        elif icecream == "done":
+            print("Here is your order")
+            for item, count in order:
+                print(f"{count} x "+ item)
+            checkicecream = input("Do you want this order?")
+            if checkicecream == "yes":
+                print("Alright your total is going to be $"+str(totalcost)+". Pay here!")
+                totalcost = 0
+                order = []
+                break
+            else:
+                print("Oh ok.")
+                totalcost = 0
+                order = []
+                icecream != "done"
+        else: 
+            print("Please select an ice cream from the menu!")
+   
+icecream()
